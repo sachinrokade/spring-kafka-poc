@@ -3,8 +3,6 @@ name: Build & Publish Docker Image
 on:
   push:
     branches: [ "git-workflow" ]
-  tags:
-    - "v*.*.*"
 
 jobs:
   docker:
