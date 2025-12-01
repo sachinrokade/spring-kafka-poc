@@ -1,7 +1,22 @@
 name: Build & Publish Docker Image
+
 on:
   push:
     branches: [ main ]
+
 jobs:
   docker:
-    runs-on: docker-compose -f kafka-docker-compose.yml up -d
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Run docker-compose
+        run: docker-compose -f kafka-docker-compose.yml up -d
+
+      - name: Verify running containers
+        run: docker ps
