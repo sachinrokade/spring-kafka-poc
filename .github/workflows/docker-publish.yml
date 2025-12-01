@@ -6,11 +6,4 @@ on:
 
 jobs:
   docker:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Run docker-compose
-        run: docker-compose -f kafka-docker-compose.yml up -d
-
-      - name: Verify running containers
-        run: docker ps
+    runs-on: docker-compose -f kafka-docker-compose.yml up -d
