@@ -1,9 +1,7 @@
 name: Build & Publish Docker Image
-
 on:
   push:
     branches: [ main ]
-
 jobs:
   docker:
     runs-on: docker-compose -f kafka-docker-compose.yml up -d
