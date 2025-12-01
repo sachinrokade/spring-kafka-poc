@@ -61,7 +61,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
+          file: ./kafka-docker-compose.yml
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/springboot-app:latest
