@@ -60,10 +60,10 @@ jobs:
         with:
           context: .
           file: ./kafka-docker-compose.yml
-          push: true
-          tags:
-            ${{ vars.DOCKERHUB_USERNAME }}/springboot-app:latest
-            ${{ vars.DOCKERHUB_USERNAME }}/springboot-app:${{ github.sha }}
+          # push: true
+          # tags:
+          #   ${{ vars.DOCKERHUB_USERNAME }}/springboot-app:latest
+          #   ${{ vars.DOCKERHUB_USERNAME }}/springboot-app:${{ github.sha }}
 
 
       # # OPTIONAL: deploy to server
